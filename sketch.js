@@ -100,12 +100,12 @@ by the arrows */
   game goes to "END" state 
   when red balloon is hit*/
   if (arrowGroup.isTouching(redB)) 
-  //if (arrowGroup.Collide(redB)) 
-  //if (arrowGroup.isCollide(redB)) 
- // if(frameCount>700)//comment this line after selecting the solution
+  
   {
     redB.destroyEach();
-    gameState=END; 
+   arrowGroup.destroyEach();
+   score=score+2;  
+    
    }
  if (arrowGroup.isTouching(pinkB)) {
   pinkB.destroyEach();
