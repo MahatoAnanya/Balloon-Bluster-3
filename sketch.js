@@ -78,26 +78,9 @@ function draw() {
       break;
       default:break;
     }
+    
+    
   }
-
-  /*Uncomment correct statement so that 
-  game goes to "END" state 
-  when red balloon is hit*/
-  if (arrowGroup.isTouching(redB)) 
-  //if (arrowGroup.Collide(redB)) 
-  //if (arrowGroup.isCollide(redB)) 
-  if(frameCount>700)//comment this line after selecting the solution
-  {
-    redB.destroyEach();
-    gameState=END; 
-   }
- 
-  if (gameState === END) {
-  bow.destroy();
-  scene.velocityX = 0;
-}
-
-
  if (arrowGroup.isTouching(greenB)) {
   greenB.destroyEach();
   arrowGroup.destroyEach();
@@ -113,25 +96,36 @@ by the arrows */
    arrowGroup.destroyEach();
    score=score+2;
    }
-
-
-//  if (arrowGroup.isTouching(redB)) {
-//   blueB.destroyEach();
-//   arrowGroup.destroyEach();
-// }
-
-
- //if (arrowGroup.isTouching(blueB)) {
-     //arrowGroup.destroyEach();
-// }
-
-
-if (arrowGroup.isTouching(pinkB)) {
+  /*Uncomment correct statement so that 
+  game goes to "END" state 
+  when red balloon is hit*/
+  if (arrowGroup.isTouching(redB)) 
+  //if (arrowGroup.Collide(redB)) 
+  //if (arrowGroup.isCollide(redB)) 
+ // if(frameCount>700)//comment this line after selecting the solution
+  {
+    redB.destroyEach();
+    gameState=END; 
+   }
+ if (arrowGroup.isTouching(pinkB)) {
   pinkB.destroyEach();
   arrowGroup.destroyEach();
   score=score+1;
 }
  }
+ else if (gameState === END) {
+  bow.destroy();
+  scene.velocityX = 0;
+}
+
+
+
+
+
+
+
+
+ 
   
   drawSprites();
   text("Score: "+ score, 300,50);
